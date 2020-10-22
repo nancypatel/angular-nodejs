@@ -1,0 +1,47 @@
+<br>
+  <div class="wrapper">
+    <div class="card">
+        <div class="card-header">
+            <div>
+                <h5>Employee Edit Form</h5>
+            </div>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="EmployeeForm" (ngSubmit)="Update()">
+            <div class="row">
+                <div class="col"> 
+                    <label for="name"><b>Name</b></label>
+                    <input type="text" formControlName="name"  class="form-control"placeholder="Enter name" name="name"  required >
+                </div>
+                <div class="col">
+                    <label for="lastname"><b>Last Name</b></label>
+                    <input type="text" formControlName="lastname" class="form-control" placeholder="Enter lastname" name="lastname"  required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col"> 
+                    <label for="mobile"><b>mobile</b></label>
+                    <input type="text" formControlName="mobile" class="form-control" placeholder="Enter phone" name="mobile"  required>
+                </div>
+                <div class="col">
+                    <label for="address"><b>Address</b></label>
+                    <input type="text" formControlName="address" class="form-control" placeholder="Enter address" name="address"  required>
+                    <br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col"> 
+                    <label for="city"><b>City</b></label>
+                    <input type="text" formControlName="city" class="form-control" placeholder="Enter city" name="city" required>
+                    <br>
+                </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                  <button [disabled]=(!EmployeeForm.valid) class="btn btn-primary">{{submitButton}}</button>
+              </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

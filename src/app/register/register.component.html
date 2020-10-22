@@ -1,0 +1,73 @@
+<html>
+    <body>
+        <br>
+        <div class="container">
+            <div class="cointainer-fluid">
+                <div class="card">
+                <div class="card-header">
+                    <h2>Register Form</h2>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="registerForm" (ngSubmit)="save()">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" placeholder="Enter name" class="form-control" formControlName="name" name="name">
+                            <div *ngIf="submitted && f.name.errors" class="text-danger">
+                                <div *ngIf="f.name.errors.required">Name is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="label-input10">Email</label>
+                            <!-- <button type="button" class="btn btn-primary btn-sm m-2" (click)="addAlternateEmails()">Add</button> -->
+                            <input type="text" placeholder="Enter email" class="form-control" formControlName="email"   name="email" #email>
+                            <div *ngIf="submitted && f.email.errors" class="text-danger">
+                                <div *ngIf="f.email.errors.required">Email is required</div>
+                                <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                            </div>
+                            <!-- <div forArrayName="alternateEmails" *ngFor="let email of alternateEmails.controls; let i">
+                                <input type="text" class="form-control my-l" [formControlName]="1">
+                            </div> -->
+                        </div>
+                        <div class="form-group">
+                            <label>password</label>
+                            <input type="text" placeholder="Enter password" class="form-control" formControlName="password"   name="password" #password>
+                            <div *ngIf="submitted && f.password.errors" class="text-danger">
+                                <div *ngIf="f.password.errors.required">password is required</div>
+                                <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Confirm password</label>
+                            <input type="text" placeholder="Enter password" class="form-control" formControlName="confirmpassword"   name="confirmpassword" #confirmpassword>
+                            <div *ngIf="submitted && f.confirmpassword.errors" class="text-danger">
+                                <div *ngIf="f.confirmpassword.errors.required">password is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Active</label>
+                            <input type="text" placeholder="Enter status active unactive" class="form-control" formControlName="active"   name="active" #active>
+                            <div *ngIf="submitted && f.confirmpassword.errors" class="text-danger">
+                                <div *ngIf="f.confirmpassword.errors.required">password is required</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <button [disabled]="registerForm.controls.valid" type="submit" class="btn btn-warning">Submit</button>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <button  class="btn btn-danger">cancel</button>
+                            </div>
+                        </div>
+                        <button (click)="goLogin()" class="btn btn-primary">Login</button>
+                    </form>
+                </div>
+            </div>
+            </div>
+        </div>
+        
+        
+        
+    </body>
+</html>

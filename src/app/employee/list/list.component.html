@@ -1,0 +1,32 @@
+<p>list works!</p>
+
+<h1>Employee</h1>
+<div  style="width: 300px;">
+  <div>
+    <div class="button">
+    <button class="btn btn-primary" routerLink="/AddEmployee">Add</button><br>
+</div> <br>
+  <table class="table">
+      <thead>
+          <tr>
+              <th>Name</th>
+              <th>Last Name</th>
+              <th>Mobile no</th>
+              <th>Address</th>
+              <th>City</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let item of Employe">
+            <td>{{ item.name }}</td>
+            <td>{{ item.lastname }}</td>
+            <td>{{ item.mobile }}</td>
+            <td>{{ item.address }}</td>
+            <td>{{ item.city }}</td>
+            <td><button (click)="editEmp(item.$key)" class="btn btn-warning"><i class="fa fa-pencil"></i></button></td>
+            <td><button (click)="deleteEmp(item.$key)" class="btn btn-danger"><i class="fa fa-trash"></i></button></td>
+          </tr>
+      </tbody>
+  </table>
+</div>
+
